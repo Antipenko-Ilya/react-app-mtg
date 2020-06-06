@@ -3,8 +3,9 @@
     display: flex;
     justify-content: space-around;
     background: #300000;
+    padding: 20px 0px;
 }
 .NavbarText {
     color: #fff;
     font-size: 22px;
-}
+}   

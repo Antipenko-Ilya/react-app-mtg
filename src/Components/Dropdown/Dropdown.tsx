@@ -6,15 +6,28 @@ interface PropsType {
   files: string[]
 }
 class Dropdown extends React.Component<PropsType> {
+    state = {
+      isDropDownShowing:false
+    }
+
+    toggleDropDown() {
+      if (this.state.isDropDownShowing) {
+        this.setState({isDropDownShowing: false})
+      } else {
+        this.setState({isDropDownShowing: true})
+      }
+    }
+
     render() {
       return (
         <div className={classes.Dropdown}>
-          <div className={classes.DropdownPlaceholder}>
+          <div onClick={()=>this.toggleDropDown()} className={classes.DropdownPlaceholder}>
             {this.props.placeholder}
           </div>
-          <div className={classes.DropdownContent}>
-            {this.props.files.map(el => <li>{el}</li>)}
-          </div>
+          {this.state.isDropDownShowing ? 
+            <div className={classes.DropdownContent}>
+              {this.props.files.map(el => <div>{el}</div>)}
+            </div> : ''}
         </div>
       )
     }

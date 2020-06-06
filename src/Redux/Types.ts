@@ -1,0 +1,2 @@
+export const SHOW_MODAL = 'SHOW_MODAL';
+export const MODAL_SUCCESS = 'LOAD_DATA_SUCCESS';
