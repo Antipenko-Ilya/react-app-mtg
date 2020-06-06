@@ -1,0 +1,11 @@
+.App{
+    background: #6A3D3D;
+    position: relative;
+}
+.AppContent{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #6A3D3D;
+}
