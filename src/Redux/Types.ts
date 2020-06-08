@@ -1,2 +1,3 @@
 export const SHOW_MODAL = 'SHOW_MODAL';
-export const MODAL_SUCCESS = 'LOAD_DATA_SUCCESS';
+export const LOAD_DATA = 'LOAD_DATA';
+export const LOAD_DATA_SUCCESS = 'LOAD_DATA_SUCCESS';

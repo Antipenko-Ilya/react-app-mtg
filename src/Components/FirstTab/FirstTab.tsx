@@ -1,25 +1,28 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { RootStore } from '../../Store';
 import classes from './FirstTab.module.css';
 
 import Button from '../Button/Button'
 import Modal from '../Modal/Modal';
 
 
-class FirstTab extends React.Component {
-    state = {
-        showModal: false
-     };
-     toggleModal = () => {
-       this.setState(() => ({showModal: !this.state.showModal}))
-     }
+class FirstTab extends React.Component<RootStore> {
     render() {
       return (
         <div className={classes.FirstTab}>
-          <Button onClick={this.toggleModal} title='Click me'/>
-          {this.state.showModal && <Modal toggleModal={ this.toggleModal } /> }
+          <Button onClick={this.props.toggleModal} title='Click me'/>
+          {this.props.showModal && <Modal toggleModal={ this.props.toggleModal } /> }
         </div>
       )
     }
   }
   
-  export default FirstTab;
+export default connect(
+  (state: RootStore) => state,
+  dispatch => ({
+    toggleModal: () => {
+      dispatch({type: 'SHOW_MODAL'})
+    }
+  })
+)(FirstTab);

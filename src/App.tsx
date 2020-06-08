@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 
 import Navbar from './Components/Navbar/Navbar';
@@ -24,4 +25,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect(
+  state => ({}),
+  dispatch => ({})
+)(App);
